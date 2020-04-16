@@ -137,6 +137,8 @@ Citizen.CreateThread(function()
                 TooglePhone()
             end
             if menuIsOpen == true then
+                DisablePlayerFiring(GetPlayerPed(-1), true)
+                DisableControlAction(0, 142, true)
                 for _, value in ipairs(KeyToucheCloseEvent) do
                     if IsControlJustPressed(1, value.code) then
                         SendNUIMessage({keyUp = value.event})
